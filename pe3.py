@@ -1,4 +1,4 @@
-#Lawrence Enroth and Shawn Rim Partner Exercise #3 - 
+#Lawrence Enroth and Shawn Rim Partner Exercise #3
 
 import string
 import datetime
@@ -35,6 +35,8 @@ def decode(input_text, shift):
 
 class BankAccount:
     def __init__(self,name='Rainy',ID=1234,create_date=datetime.date.today(),balance = 0):
+        if not isinstance(create_date, datetime.date):
+            raise TypeError("create_date must be a datetime.date instance")
         if create_date > datetime.date.today():
             raise Exception("Invalid Creation date")
         self.name = name
